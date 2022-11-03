@@ -1,0 +1,16 @@
+.yo{
+    /* width: 50vw; */
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+h1{
+    font-family: fantasy;
+}
+.alert{
+    text-align: center;
+}
+.banner {
+    color: brown;
+    font-size: 90px;
+    font-family: sans-serif;
+}

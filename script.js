@@ -24,11 +24,11 @@ function showResult(n){
 
     history.push(n)
     if(n==random)
-        dialog = 'Awesome, You Guessed Right ....'
+        dialog = '<div class="alert alert-info" role="alert">'+'Awesome, You Guessed Right ....'+'</div>'
     else if(n>random)
-        dialog = 'Too High'
+        dialog = '<div class="alert alert-danger" role="alert">'+'Too High'+'</div>'
     else
-        dialog = 'Too Low'
+        dialog = '<div class="alert alert-danger" role="alert">'+'Too Low'+'</div>'
     document.getElementById("result").innerHTML = dialog
 }
 
@@ -36,7 +36,7 @@ function showHistory(){
 
     let dialog = ''
     for(let i=history.length-1;i>=0;i--)
-        dialog+='<ul> You Guessed '+history[i]+'</ul>'
+        dialog+= '<div class="alert alert-primary" role="alert">' +'You Guessed '+history[i]+'</div>'
     document.getElementById("history").innerHTML = dialog
     
 }
