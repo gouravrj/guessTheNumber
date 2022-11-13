@@ -1,16 +1,12 @@
-.yo{
-    /* width: 50vw; */
-    margin-left: 25vw;
-    margin-right: 25vw;
+#user-input, #history, #result{
+    max-width: 300px;
+    margin: auto;
+}
+.banner {
+    /* color: brown; */
+    font-size: 90px;
+    font-family: sans-serif;
 }
 h1{
     font-family: fantasy;
-}
-.alert{
-    text-align: center;
-}
-.banner {
-    color: brown;
-    font-size: 90px;
-    font-family: sans-serif;
 }
