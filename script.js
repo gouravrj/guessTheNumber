@@ -1,42 +1,36 @@
-let random = Math.floor((Math.random()*100)+1)
-console.log(random);
-let history=[]
-
-
-function reset(){
-    random = Math.floor((Math.random()*100)+1)
-    console.log(random);
-    document.getElementById("result").innerHTML=''
-    history = [];
-    showHistory()
-}
-
+let n = Math.floor((Math.random()*100) + 1)
+console.log(n);
+var h=[]
 
 function play(){
-
-    let n = document.getElementById("inputNumber").value
-    showResult(n)
-    showHistory()
-
+    let input = document.getElementById("user-input").value
+    h.push(input);
+    result(input)
+    history();
+}
+function reset(){
+    n = Math.floor((Math.random()*100) + 1);
+    h = [];
+    document.getElementById("result").innerHTML = "";
+    history();
 }
 
-function showResult(n){
-
-    history.push(n)
-    if(n==random)
-        dialog = '<div class="alert alert-info" role="alert">'+'Awesome, You Guessed Right ....'+'</div>'
-    else if(n>random)
-        dialog = '<div class="alert alert-danger" role="alert">'+'Too High'+'</div>'
+function result(input){
+    var text=""
+    if(input==n)
+    {
+        document.getElementById("result").innerHTML = `<div class="alert alert-primary" role="alert">Awesome, You Guessed Right !</div>`;
+    }
+    else if(input<n)
+        document.getElementById("result").innerHTML = `<div class="alert alert-primary" role="alert">U Guessed Too Low</div>`
     else
-        dialog = '<div class="alert alert-danger" role="alert">'+'Too Low'+'</div>'
-    document.getElementById("result").innerHTML = dialog
+        document.getElementById("result").innerHTML = `<div class="alert alert-primary" role="alert">U Guessed Too High</div>`
+
 }
 
-function showHistory(){
-
-    let dialog = ''
-    for(let i=history.length-1;i>=0;i--)
-        dialog+= '<div class="alert alert-primary" role="alert">' +'You Guessed '+history[i]+'</div>'
-    document.getElementById("history").innerHTML = dialog
-    
+function history(){
+    let text = ""
+    for(let i=h.length-1;i>=0;i--)
+        text+=`<li class="list-group-item list-group-item-secondary">You Guessed ${h[i]}</li>`
+    document.getElementById("history").innerHTML = text;
 }
